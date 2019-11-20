@@ -9,12 +9,14 @@ function init(bundle, parent, options = {}) {
     fullScreen: true,
     ...options,
   });
-
+  const s = r360.getDefaultSurface();
+  s.resize(3000, 600)
   // Render your app content to the default cylinder surface
   r360.renderToSurface(
     r360.createRoot('dmPT360', { /* initial props */ }),
     r360.getDefaultSurface()
   );
+  
 
   // Load the initial environment
   r360.compositor.setBackground(r360.getAssetURL('360_background.jpg'));

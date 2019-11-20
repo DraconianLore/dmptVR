@@ -14,20 +14,53 @@ export default class dmPT360 extends Component {
       loggedIn: false
     }
   }
+
+
   render() {
     return (
       <View style={styles.panel}>
-        <View style={styles.greetingBox}>
-          <Text style={styles.greeting}>
-            Dungeon Master Player Tracker 
-          </Text>
-          <Text style={styles.largeTitle}>
-            VR Edition
-          </Text>
+        <View style={styles.sectionBox}>
+
+          <View style={styles.greetingBox}>
+            <Text style={styles.greeting}>
+              Dungeon Master Player Tracker
+</Text>
+            <Text style={styles.largeTitle}>
+              VR Edition
+</Text>
+          </View>
+          {this.state.loggedIn
+            ? <View> LOGGED IN </View>
+            : <Login />}
         </View>
-        {this.state.loggedIn 
-        ? <View> LOGGED IN </View>
-        : <Login />}
+        <View style={styles.sectionBox}>
+
+          <View style={styles.greetingBox}>
+            <Text style={styles.greeting}>
+              Dungeon Master Player Tracker
+          </Text>
+            <Text style={styles.largeTitle}>
+              VR Edition
+          </Text>
+          </View>
+          {this.state.loggedIn
+            ? <View> LOGGED IN </View>
+            : <Login />}
+        </View>
+        <View style={styles.sectionBox}>
+
+          <View style={styles.greetingBox}>
+            <Text style={styles.greeting}>
+              Dungeon Master Player Tracker
+          </Text>
+            <Text style={styles.largeTitle}>
+              VR Edition
+          </Text>
+          </View>
+          {this.state.loggedIn
+            ? <View> LOGGED IN </View>
+            : <Login />}
+        </View>
       </View>
     );
   }
@@ -36,11 +69,19 @@ export default class dmPT360 extends Component {
 const styles = StyleSheet.create({
   panel: {
     // Fill the entire surface
-    width: 1000,
+    width: 3000,
     height: 600,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
     // justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'row'
+  },
+  sectionBox: {
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    width: '30%',
+    height: '100%',
+    margin: 12.5,
+    borderRadius: 25,
+    padding: 25
   },
   greetingBox: {
     padding: 20,
@@ -50,7 +91,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderTopLeftRadius: 0,
     borderTopRightRadius: 0,
-    width: 1000
+    width: '100%'
 
   },
   greeting: {

@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
+  VrButton
 } from 'react-360';
 
 
@@ -23,28 +24,31 @@ export default class Login extends Component {
         backgroundColor: active ? '#003300' : '#006600'
       }
     )
-}
+  }
+  test() {
+    console.log('PRESSED')
+  }
 
-render() {
-  return (
-    <View style={styles.loginContainer}>
-      <View>
-        <View style={[styles.sectionButton, this.buttonColor(!this.state.register)]}>
-          <Text style={styles.buttonText}>
-            LOGIN
+  render() {
+    return (
+      <View style={styles.loginContainer}>
+          <VrButton onClick={this.test} id='Login'>
+            <View style={[styles.sectionButton, this.buttonColor(!this.state.register)]}>
+              <Text style={styles.buttonText}>
+                LOGIN
             </Text>
-        </View>
-      </View>
-      <View>
-        <View style={[styles.sectionButton, this.buttonColor(this.state.register)]}>
-          <Text style={styles.buttonText}>
-            REGISTER
+            </View>
+          </VrButton>
+        <VrButton>
+          <View style={[styles.sectionButton, this.buttonColor(this.state.register)]}>
+            <Text style={styles.buttonText} >
+              REGISTER
             </Text>
-        </View>
+          </View>
+        </VrButton>
       </View>
-    </View>
-  )
-}
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -66,5 +70,11 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'peru'
+  },
+  button: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    backgroundColor: 'green'
   }
 });
